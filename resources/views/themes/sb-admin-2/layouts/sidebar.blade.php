@@ -13,7 +13,7 @@
     <hr class="sidebar-divider my-0">
 
     <!-- Nav Item - Dashboard -->
-    <li class="nav-item active">
+    <li class="nav-item {{ (strpos($view_name, 'dashboard')) ? 'active' : '' }}">
         <a class="nav-link" href="/">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
@@ -28,33 +28,33 @@
     </div>
 
     <!-- Nav Item - Pages Collapse Menu -->
-    <li class="nav-item">
+    <li class="nav-item {{ (strpos($view_name, 'components')) ? 'active' : '' }}">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
             <i class="fas fa-fw fa-cog"></i>
             <span>Components</span>
         </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        <div id="collapseTwo" class="collapse {{ (strpos($view_name, 'components')) ? 'show' : '' }}" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Custom Components:</h6>
-                <a class="collapse-item" href="buttons">Buttons</a>
-                <a class="collapse-item" href="cards">Cards</a>
+                <a class="collapse-item {{ (request()->is('buttons')) ? 'active' : '' }}" href="buttons">Buttons</a>
+                <a class="collapse-item {{ (request()->is('cards')) ? 'active' : '' }}" href="cards">Cards</a>
             </div>
         </div>
     </li>
 
     <!-- Nav Item - Utilities Collapse Menu -->
-    <li class="nav-item">
+    <li class="nav-item {{ (strpos($view_name, 'utilities')) ? 'active' : '' }}">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
             <i class="fas fa-fw fa-wrench"></i>
             <span>Utilities</span>
         </a>
-        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+        <div id="collapseUtilities" class="collapse {{ (strpos($view_name, 'utilities')) ? 'show' : '' }}" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Custom Utilities:</h6>
-                <a class="collapse-item" href="utilities-color">Colors</a>
-                <a class="collapse-item" href="utilities-border">Borders</a>
-                <a class="collapse-item" href="utilities-animation">Animations</a>
-                <a class="collapse-item" href="utilities-other">Other</a>
+                <a class="collapse-item {{ (request()->is('colors')) ? 'active' : '' }}" href="colors">Colors</a>
+                <a class="collapse-item {{ (request()->is('borders')) ? 'active' : '' }}" href="borders">Borders</a>
+                <a class="collapse-item {{ (request()->is('animations')) ? 'active' : '' }}" href="animations">Animations</a>
+                <a class="collapse-item {{ (request()->is('other')) ? 'active' : '' }}" href="other">Other</a>
             </div>
         </div>
     </li>
@@ -68,12 +68,12 @@
     </div>
 
     <!-- Nav Item - Pages Collapse Menu -->
-    <li class="nav-item">
+    <li class="nav-item {{ (strpos($view_name, 'pages')) ? 'active' : '' }}">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
             <i class="fas fa-fw fa-folder"></i>
             <span>Pages</span>
         </a>
-        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+        <div id="collapsePages" class="collapse {{ (strpos($view_name, 'pages')) ? 'show' : '' }}" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Login Screens:</h6>
                 <a class="collapse-item" href="login">Login</a>
@@ -81,21 +81,21 @@
                 <a class="collapse-item" href="forgot-password">Forgot Password</a>
                 <div class="collapse-divider"></div>
                 <h6 class="collapse-header">Other Pages:</h6>
-                <a class="collapse-item" href="404">404 Page</a>
-                <a class="collapse-item" href="blank">Blank Page</a>
+                <a class="collapse-item {{ (request()->is('404')) ? 'active' : '' }}" href="404">404 Page</a>
+                <a class="collapse-item {{ (request()->is('blank')) ? 'active' : '' }}" href="blank">Blank Page</a>
             </div>
         </div>
     </li>
 
     <!-- Nav Item - Charts -->
-    <li class="nav-item">
+    <li class="nav-item {{ (strpos($view_name, 'charts')) ? 'active' : '' }}">
         <a class="nav-link" href="charts">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Charts</span></a>
     </li>
 
     <!-- Nav Item - Tables -->
-    <li class="nav-item">
+    <li class="nav-item {{ (strpos($view_name, 'tables')) ? 'active' : '' }}">
         <a class="nav-link" href="tables">
             <i class="fas fa-fw fa-table"></i>
             <span>Tables</span></a>

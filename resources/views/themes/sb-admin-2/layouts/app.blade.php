@@ -55,12 +55,25 @@
 <!-- Custom scripts for all pages-->
 <script src="/js/sb-admin-2.js"></script>
 
+@if (preg_match('/dashboard|charts/', $view_name))
 <!-- Page level plugins -->
 <script src="/js/Chart.bundle.js"></script>
 
 <!-- Page level custom scripts -->
 <script src="/js/demo/chart-area-demo.js"></script>
 <script src="/js/demo/chart-pie-demo.js"></script>
+@endif
+@if (strpos($view_name, 'charts'))
+<script src="/js/demo/chart-bar-demo.js"></script>
+@endif
+@if (strpos($view_name, 'tables'))
+<!-- Page level plugins -->
+<script src="/js/jquery.dataTables.min.js"></script>
+<script src="/js/dataTables.bootstrap4.min.js"></script>
+
+<!-- Page level custom scripts -->
+<script src="/js/demo/datatables-demo.js"></script>
+@endif
 
 </body>
 @stop

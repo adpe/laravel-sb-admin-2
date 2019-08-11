@@ -19,6 +19,11 @@
     <!-- Custom styles for this template-->
     <link href="/css/sb-admin-2.css" rel="stylesheet">
 
+    @if (strpos($view_name, 'tables'))
+    <!-- Custom styles for this page -->
+    <link href="/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+    @endif
+
 </head>
 
 @yield('body-content')

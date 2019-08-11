@@ -23,3 +23,33 @@ Route::get('/register', function () {
 Route::get('/forgot-password', function () {
     return view(env('THEME_NAME') . '/auth.forgot-password');
 });
+Route::get('/buttons', function () {
+    return view(env('THEME_NAME') . '/components.buttons');
+});
+Route::get('/cards', function () {
+    return view(env('THEME_NAME') . '/components.cards');
+});
+Route::get('/colors', function () {
+    return view(env('THEME_NAME') . '/utilities.colors');
+});
+Route::get('/borders', function () {
+    return view(env('THEME_NAME') . '/utilities.borders');
+});
+Route::get('/animations', function () {
+    return view(env('THEME_NAME') . '/utilities.animations');
+});
+Route::get('/other', function () {
+    return view(env('THEME_NAME') . '/utilities.other');
+});
+Route::get('/404', function () {
+    return view(env('THEME_NAME') . '/pages.404');
+});
+Route::get('/blank', function () {
+    return view(env('THEME_NAME') . '/pages.blank');
+});
+Route::get('/charts', function () {
+    return view(env('THEME_NAME') . '/charts');
+});
+Route::get('/tables', function () {
+    return view(env('THEME_NAME') . '/tables');
+});
