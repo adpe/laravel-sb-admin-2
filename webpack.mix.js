@@ -1,4 +1,5 @@
 const mix = require('laravel-mix');
+let theme_path = process.env.THEME_PATH;
 
 /*
  |--------------------------------------------------------------------------
@@ -12,4 +13,13 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css');
+    .js(theme_path + 'js/sb-admin-2.js', 'public/js')
+    .js(theme_path + 'vendor/jquery/jquery.js', 'public/js')
+    .js(theme_path + 'vendor/bootstrap/js/bootstrap.js', 'public/js')
+    .js(theme_path + 'vendor/jquery-easing/jquery.easing.js', 'public/js')
+    .js(theme_path + 'vendor/chart.js/Chart.bundle.js', 'public/js')
+    .sass('resources/sass/app.scss', 'public/css')
+    .sass(theme_path + 'scss/sb-admin-2.scss', 'public/css')
+    .sass(theme_path + 'vendor/fontawesome-free/scss/fontawesome.scss', 'public/css')
+    .copy(theme_path + 'vendor/fontawesome-free/webfonts', 'public/webfonts')
+    .copy(theme_path + 'img', 'public/img');

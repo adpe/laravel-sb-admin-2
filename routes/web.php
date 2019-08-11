@@ -12,5 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view(env('THEME_NAME') . '/layouts.app');
+});
+Route::get('/login', function () {
+        return redirect('/login');
 });
