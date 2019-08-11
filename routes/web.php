@@ -12,8 +12,14 @@
 */
 
 Route::get('/', function () {
-    return view(env('THEME_NAME') . '/layouts.app');
+    return view(env('THEME_NAME') . '/dashboard');
 });
 Route::get('/login', function () {
-        return redirect('/login');
+    return view(env('THEME_NAME') . '/auth.login');
+});
+Route::get('/register', function () {
+    return view(env('THEME_NAME') . '/auth.register');
+});
+Route::get('/forgot-password', function () {
+    return view(env('THEME_NAME') . '/auth.forgot-password');
 });
