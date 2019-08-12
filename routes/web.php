@@ -11,14 +11,10 @@
 |
 */
 
+
+Auth::routes();
 Route::get('/', function () {
     return view(env('THEME_NAME') . '/dashboard');
-});
-Route::get('/login', function () {
-    return view(env('THEME_NAME') . '/auth.login');
-});
-Route::get('/register', function () {
-    return view(env('THEME_NAME') . '/auth.register');
 });
 Route::get('/forgot-password', function () {
     return view(env('THEME_NAME') . '/auth.forgot-password');
@@ -53,3 +49,5 @@ Route::get('/charts', function () {
 Route::get('/tables', function () {
     return view(env('THEME_NAME') . '/tables');
 });
+Route::get('/backend', 'BackendController@index')->name('backend');
+Route::get('/plugins', 'MoodleController@index')->name('plugins');

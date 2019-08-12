@@ -19,6 +19,7 @@
             <span>Dashboard</span></a>
     </li>
 
+    @guest
     <!-- Divider -->
     <hr class="sidebar-divider">
 
@@ -58,6 +59,7 @@
             </div>
         </div>
     </li>
+    @endguest
 
     <!-- Divider -->
     <hr class="sidebar-divider">
@@ -67,6 +69,21 @@
         Addons
     </div>
 
+    <!-- Nav Item - Moodle Collapse Menu -->
+    @auth
+    <li class="nav-item {{ (strpos($view_path, 'moodle')) ? 'active' : '' }}">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseMoodle" aria-expanded="true" aria-controls="collapseMoodle">
+            <i class="fas fa-fw fa-puzzle-piece"></i>
+            <span>Moodle</span>
+        </a>
+        <div id="collapseMoodle" class="collapse {{ (strpos($view_path, 'plugins')) ? 'show' : '' }}" aria-labelledby="headingMoodle" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item {{ (request()->is('plugins')) ? 'active' : '' }}" href="plugins">Plugins Overview</a>
+            </div>
+        </div>
+    </li>
+    @endauth
+    @guest
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item {{ (strpos($view_name, 'pages')) ? 'active' : '' }}">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
@@ -100,6 +117,7 @@
             <i class="fas fa-fw fa-table"></i>
             <span>Tables</span></a>
     </li>
+    @endguest
 
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
