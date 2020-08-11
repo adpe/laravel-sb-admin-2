@@ -23,5 +23,8 @@
         "startbootstrap-sb-admin-2": "^4.0.7",
         "vue": "^2.6.11",
         "vue-template-compiler": "^2.6.11"
+    },
+    "dependencies": {
+        "dot-prop": "^5.2.0"
     }
 }
