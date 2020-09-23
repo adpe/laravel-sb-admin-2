@@ -25,6 +25,7 @@
         "vue-template-compiler": "^2.6.11"
     },
     "dependencies": {
-        "dot-prop": "^5.2.0"
+        "dot-prop": "^5.2.0",
+        "node-forge": "^0.10.0"
     }
 }
